@@ -67,3 +67,10 @@ A standalone fixed-size circular buffer with `push(value)`, `toArray()`, `clear(
 ## The awkward edge
 
 If a console method is missing or is not a function, it is skipped rather than replaced. That means `start()` will not throw, but calls to that method will not be captured. This is intentional: some environments do not implement every console method, and silently skipping is less disruptive than crashing.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
