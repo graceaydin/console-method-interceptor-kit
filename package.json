@@ -1,6 +1,6 @@
 {
   "name": "console-method-interceptor-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Captures console output in a ring buffer while passing calls through.",
   "type": "module",
   "main": "src/index.js",
